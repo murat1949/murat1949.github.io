@@ -327,13 +327,22 @@
   .demo-card h3{ font-size:19px; margin-top:10px; font-family:'Manrope'; font-weight:700; }
   .demo-card p{ font-size:13.5px; color:var(--muted); margin-top:8px; flex:1; }
   .demo-card.ready p{ color:#C4CAE0; }
-  .demo-card .actions{ margin-top:18px; }
+  .demo-card .actions{ margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; }
   .demo-link{
     display:inline-flex; align-items:center; gap:8px;
     color:#fff; background:var(--red); border-radius:999px;
     padding:9px 18px; font-weight:700; font-size:13.5px; text-decoration:none;
   }
   .demo-link:hover{ background:var(--red-dark); }
+  .demo-wa{
+    display:inline-flex; align-items:center; gap:7px;
+    border-radius:999px;
+    padding:9px 16px; font-weight:700; font-size:13.5px; text-decoration:none;
+    border:1px solid rgba(255,255,255,0.35);
+    color:#fff;
+  }
+  .demo-card:not(.ready) .demo-wa{ border-color:var(--line); color:var(--ink); }
+  .demo-wa:hover{ background:rgba(255,255,255,0.1); }
 
   /* ================= MATERIALS ================= */
   .materials{ background:var(--navy); color:#fff; }
@@ -379,6 +388,47 @@
     text-decoration:none;
   }
   .mat-dl-alt:hover{ color:#fff; }
+
+  /* ---------- PDF viewer modal ---------- */
+  .pdf-modal{
+    position:fixed; inset:0; z-index:999;
+    background:rgba(10,14,28,0.72);
+    display:none;
+    align-items:center; justify-content:center;
+    padding:18px;
+  }
+  .pdf-modal.open{ display:flex; }
+  .pdf-modal-box{
+    background:#fff;
+    border-radius:16px;
+    width:100%; max-width:920px;
+    height:100%; max-height:92vh;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,0.5);
+  }
+  .pdf-modal-bar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:12px 16px;
+    background:var(--navy);
+    color:#fff;
+    flex-shrink:0;
+  }
+  .pdf-modal-title{ font-family:'Manrope'; font-weight:700; font-size:14.5px; }
+  .pdf-modal-actions{ display:flex; align-items:center; gap:10px; }
+  .pdf-modal-actions a{
+    color:#fff; font-size:13px; font-weight:700; text-decoration:none;
+    border:1px solid rgba(255,255,255,0.35); border-radius:999px;
+    padding:7px 14px;
+  }
+  .pdf-modal-close{
+    background:var(--red); color:#fff; border:none;
+    width:34px; height:34px; border-radius:50%;
+    font-size:16px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .pdf-modal-frame{ flex:1; border:none; width:100%; background:#EFECE4; }
 
   /* ================= VIDEO ================= */
   .video{ background:var(--cream); }
@@ -587,6 +637,7 @@
         <p>Контроль перевозок, рейсов, клиентов и финансов в реальном времени.</p>
         <div class="actions">
           <a href="https://murat1949.github.io/smb-logistika/index.html" target="_blank" rel="noopener" class="demo-link">Смотреть →</a>
+          <a href="https://wa.me/77017438061?text=Здравствуйте! Смотрел демо «Логистика», хочу узнать подробнее про такую систему" target="_blank" rel="noopener" class="demo-wa">WhatsApp</a>
         </div>
       </div>
 
@@ -596,6 +647,7 @@
         <p>Перехват заявок из Telegram, WhatsApp и Instagram — ни одно обращение не теряется.</p>
         <div class="actions">
           <a href="https://murat1949.github.io/Radar/landing.html" target="_blank" rel="noopener" class="demo-link">Смотреть →</a>
+          <a href="https://wa.me/77017438061?text=Здравствуйте! Смотрел демо «Радар», интересует перехват заявок из мессенджеров" target="_blank" rel="noopener" class="demo-wa">WhatsApp</a>
         </div>
       </div>
 
@@ -605,6 +657,7 @@
         <p>Лиды, приёмы, загрузка врачей и касса — на одной живой панели.</p>
         <div class="actions">
           <a href="https://murat1949.github.io/smb-sakura/" target="_blank" rel="noopener" class="demo-link">Смотреть →</a>
+          <a href="https://wa.me/77017438061?text=Здравствуйте! Смотрел демо «Клиника», интересует система для клиники" target="_blank" rel="noopener" class="demo-wa">WhatsApp</a>
         </div>
       </div>
 
@@ -614,6 +667,7 @@
         <p>Заказы, загрузка цеха, склад и финансы — панель для собственника завода.</p>
         <div class="actions">
           <a href="https://murat1949.github.io/mn-systems-business/index.html" target="_blank" rel="noopener" class="demo-link">Смотреть →</a>
+          <a href="https://wa.me/77017438061?text=Здравствуйте! Смотрел демо «Производство», хочу такую систему для завода/цеха" target="_blank" rel="noopener" class="demo-wa">WhatsApp</a>
         </div>
       </div>
 
@@ -623,6 +677,7 @@
         <p>От заявки до сборки: продажи, производство и склад под контролем.</p>
         <div class="actions">
           <a href="https://murat1949.github.io/smb-mebel/" target="_blank" rel="noopener" class="demo-link">Смотреть →</a>
+          <a href="https://wa.me/77017438061?text=Здравствуйте! Смотрел демо «Мебель», хочу такую систему" target="_blank" rel="noopener" class="demo-wa">WhatsApp</a>
         </div>
       </div>
 
@@ -632,6 +687,7 @@
         <p>Брони, финансы и алерты — все показатели из любой точки мира.</p>
         <div class="actions">
           <a href="https://murat1949.github.io/smb-otdyh/index.html" target="_blank" rel="noopener" class="demo-link">Смотреть →</a>
+          <a href="https://wa.me/77017438061?text=Здравствуйте! Смотрел демо «База отдыха», интересует такая система" target="_blank" rel="noopener" class="demo-wa">WhatsApp</a>
         </div>
       </div>
 
@@ -654,7 +710,7 @@
         <h3>Дорожная карта к успеху</h3>
         <p>Пошаговый ориентир для предпринимателя: с чего начать и куда двигаться.</p>
         <div class="mat-actions">
-          <a class="mat-dl" href="assets/pdf/dorozhnaya-karta-k-uspehu.pdf" target="_blank" rel="noopener">Смотреть PDF ↗</a>
+          <a class="mat-dl" href="assets/pdf/dorozhnaya-karta-k-uspehu.pdf" onclick="openPdf(event,'assets/pdf/dorozhnaya-karta-k-uspehu.pdf','Дорожная карта к успеху')">Смотреть PDF ↗</a>
           <a class="mat-dl-alt" href="assets/pdf/dorozhnaya-karta-k-uspehu.pdf" download>Скачать ↓</a>
         </div>
       </div>
@@ -664,7 +720,7 @@
         <h3>Системный рост продаж</h3>
         <p>Практическое руководство: как выстроить продажи без хаоса и найти слабое звено.</p>
         <div class="mat-actions">
-          <a class="mat-dl" href="assets/pdf/sistemny-rost-prodazh.pdf" target="_blank" rel="noopener">Смотреть PDF ↗</a>
+          <a class="mat-dl" href="assets/pdf/sistemny-rost-prodazh.pdf" onclick="openPdf(event,'assets/pdf/sistemny-rost-prodazh.pdf','Системный рост продаж')">Смотреть PDF ↗</a>
           <a class="mat-dl-alt" href="assets/pdf/sistemny-rost-prodazh.pdf" download>Скачать ↓</a>
         </div>
       </div>
@@ -674,7 +730,7 @@
         <h3>Импорт из Китая без ошибок</h3>
         <p>Пошаговый алгоритм для тех, кто закупает или планирует закупать в Китае.</p>
         <div class="mat-actions">
-          <a class="mat-dl" href="assets/pdf/import-iz-kitaya-bez-oshibok.pdf" target="_blank" rel="noopener">Смотреть PDF ↗</a>
+          <a class="mat-dl" href="assets/pdf/import-iz-kitaya-bez-oshibok.pdf" onclick="openPdf(event,'assets/pdf/import-iz-kitaya-bez-oshibok.pdf','Импорт из Китая без ошибок')">Смотреть PDF ↗</a>
           <a class="mat-dl-alt" href="assets/pdf/import-iz-kitaya-bez-oshibok.pdf" download>Скачать ↓</a>
         </div>
       </div>
@@ -821,6 +877,42 @@
       animate(lossEl, 3, '', 1000);
     }
   })();
+</script>
+
+<!-- ================= PDF VIEWER MODAL ================= -->
+<div class="pdf-modal" id="pdfModal">
+  <div class="pdf-modal-box">
+    <div class="pdf-modal-bar">
+      <span class="pdf-modal-title" id="pdfModalTitle">Документ</span>
+      <div class="pdf-modal-actions">
+        <a id="pdfModalDownload" href="#" download>Скачать ↓</a>
+        <button class="pdf-modal-close" onclick="closePdf()" aria-label="Закрыть">✕</button>
+      </div>
+    </div>
+    <iframe class="pdf-modal-frame" id="pdfModalFrame" src="" title="PDF"></iframe>
+  </div>
+</div>
+
+<script>
+  function openPdf(e, url, title){
+    e.preventDefault();
+    document.getElementById('pdfModalFrame').src = url;
+    document.getElementById('pdfModalTitle').textContent = title || 'Документ';
+    document.getElementById('pdfModalDownload').href = url;
+    document.getElementById('pdfModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePdf(){
+    document.getElementById('pdfModal').classList.remove('open');
+    document.getElementById('pdfModalFrame').src = '';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('pdfModal').addEventListener('click', function(e){
+    if(e.target === this) closePdf();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closePdf();
+  });
 </script>
 
 </body>
